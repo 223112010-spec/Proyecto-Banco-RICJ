@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="header">
+        <h1>
+            <div class="icon-placeholder">👤</div>
+            Crear cuenta
+            <div class="icon-placeholder">👤</div>
+        </h1>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nombre">
+                <div class="label-icon">👤</div>
+                Nombre completo
+            </label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre completo" [(ngModel)]="nombreCompleto" name="nombreCompleto">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="telefono">
+                    <div class="label-icon">📞</div>
+                    Teléfono
+                </label>
+                <input type="tel" id="telefono" placeholder="Número de teléfono" [(ngModel)]="telefono" name="telefono">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">
+                    <div class="label-icon">✉️</div>
+                    Correo
+                </label>
+                <input type="email" id="correo" placeholder="Correo electrónico" [(ngModel)]="correo" name="correo">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nacimiento">
+                <div class="label-icon">📅</div>
+                Fecha de nacimiento
+            </label>
+            <input type="date" id="nacimiento" [(ngModel)]="fechaNacimiento" name="fechaNacimiento">
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-title">
+                <div class="label-icon">📄</div>
+                Subir documentos:
+            </div>
+
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">🆔</div>
+                    INE
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="subirDocumento('ine')">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">🏠</div>
+                    Comprobante de domicilio
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="subirDocumento('domicilio')">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">📷</div>
+                    Foto
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="subirDocumento('foto')">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+
+            <div class="upload-item">
+                <div class="upload-label">
+                    <div class="label-icon">📋</div>
+                    CURP
+                </div>
+                <div class="upload-controls">
+                    <button type="button" class="upload-btn" (click)="subirDocumento('curp')">Subir</button>
+                    <div class="share-icon"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>
+                <input type="checkbox" [(ngModel)]="terminosAceptados" name="terminosAceptados" required>
+                Acepto los <a routerLink="/terYcon">Términos y Condiciones</a>
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="!terminosAceptados">ENVIAR</button>
+    </form>
+</div>

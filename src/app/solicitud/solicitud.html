@@ -1,0 +1,60 @@
+<div class="form-container">
+  <div class="form-header">
+    <img src="/assets/icons/card-icon.png" alt="icono tarjeta">
+    Formulario de Solicitud de Tarjeta
+  </div>
+
+  <div class="form-body">
+    <div class="form-section">
+      <h3>Datos personales:</h3>
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" [(ngModel)]="nombreCompleto" name="nombre">
+
+      <label for="id">Número de Identificación:</label>
+      <input type="text" id="id" [(ngModel)]="numeroIdentificacion" name="id">
+
+      <label for="curp">Número de Identificación/CURP:</label>
+      <input type="text" id="curp" [(ngModel)]="curp" name="curp">
+
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" [(ngModel)]="telefono" name="telefono">
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" [(ngModel)]="correo" name="correo">
+    </div>
+
+    <div class="form-section">
+      <h3>Tipo de tarjeta:</h3>
+      <div class="radio-group">
+        <label for="credito">Crédito</label>
+        <input type="radio" name="tipo" id="credito" value="credito" [(ngModel)]="tipoTarjeta">
+        <label for="debito">Débito</label>
+        <input type="radio" name="tipo" id="debito" value="debito" [(ngModel)]="tipoTarjeta">
+      </div>
+
+      <label for="ingresos">Ingresos mensuales:</label>
+      <input type="text" id="ingresos" [(ngModel)]="ingresos" name="ingresos">
+
+      <label for="historial">Historial crediticio:</label>
+      <div class="radio-group">
+        <label for="si">Sí</label>
+        <input type="radio" name="historial" id="si" value="si" [(ngModel)]="historialCrediticio">
+        <label for="no">No</label>
+        <input type="radio" name="historial" id="no" value="no" [(ngModel)]="historialCrediticio">
+      </div>
+
+      <label for="cuenta">Tipo de cuenta:</label>
+      <select id="cuenta" [(ngModel)]="tipoCuenta" name="tipoCuenta">
+        <option value="">Seleccione</option>
+        <option>Ahorro</option>
+        <option>Corriente</option>
+        <option>Inversión</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-footer">
+    <button class="btn btn-primary" [disabled]="!formularioValido" (click)="enviarFormulario()">Continuar</button>
+    <button class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+  </div>
+</div>

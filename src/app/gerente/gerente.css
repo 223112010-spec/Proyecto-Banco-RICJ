@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login InnovaBank</title>
-  <style>
-    body {
+body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #6f9dab;
@@ -109,32 +102,3 @@
     .login-btn:hover {
       background-color: #d6d6d6;
     }
-  </style>
-</head>
-<body>
-
-  <div class="login-container">
-    <div class="header">
-      <img src="https://images.vexels.com/media/users/3/263264/isolated/preview/11a26a1102ca38d370338cf6a91459c4-icono-de-banco-de-negocio-de-dinero.png" alt="Logo Banco">
-      <h1><span style="color:black;">INNOVA</span><span style="color:white;">BANK</span></h1>
-    </div>
-    <p class="sub-text">Gerente</p>
-
-    <form>
-      <label for="usuario">Usuario o Correo*</label>
-      <input type="text" id="usuario" placeholder="Ingresa tu usuario o correo">
-
-      <label for="password">Contraseña*</label>
-      <input type="password" id="password" placeholder="Ingresa tu contraseña">
-
-      <div class="remember">
-        <label><input type="checkbox"> Recuérdame</label>
-        <a href="#">¿Olvidaste tu contraseña?</a>
-      </div>
-
-      <button type="submit" class="login-btn">Inicia sesión</button>
-    </form>
-  </div>
-
-</body>
-</html>

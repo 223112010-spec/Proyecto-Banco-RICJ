@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="left-section">
+    <div class="welcome-text">
+      <h1>Bienvenido a InnovaBank</h1>
+      <p>Combina estabilidad financiera con una perspectiva de futuro innovadora</p>
+      <a [routerLink]="['/solicitud']" class="link">¿No tienes una cuenta? Crea una</a>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="menu-container">
+      <button class="menu-trigger" (click)="toggleMenu()">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        Más información en<br />www.innovabank.com
+      </button>
+
+      <div class="dropdown-menu" [class.active]="isMenuOpen">
+        <div class="dropdown-item with-subtitle">
+          <span>📞 Contactar soporte</span>
+          <span class="dropdown-subtitle">Teléfono de asistencia</span>
+        </div>
+
+        <div class="dropdown-divider"></div>
+
+        <div class="dropdown-item" (click)="showAlert('Ayuda')">
+          <span>❓</span>
+          Ayuda
+        </div>
+
+        <div class="dropdown-item" (click)="showAlert('Seguro')">
+          <span>🔒</span>
+          Seguro
+        </div>
+
+        <div class="dropdown-item" [routerLink]="['/gerente']">
+          <span>👤</span>
+          Gerente
+        </div>
+
+        <div class="dropdown-divider"></div>
+
+        <div class="dropdown-item" [routerLink]="['/gerente']">
+          <span>🚪</span>
+          Ejecutivo
+        </div>
+      </div>
+    </div>
+
+    <div class="logo">
+      <div>
+        <div class="logo-icon"></div>
+      </div>
+      <div>
+        <div class="logo-text">INNOVABANK</div>
+        <div class="logo-subtitle">UNA EXPERIENCIA DIGITAL</div>
+      </div>
+    </div>
+
+    <form class="login-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Usuario o Correo*</label>
+        <input type="text" id="username" placeholder="Usuario/Correo" [(ngModel)]="username" name="username" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña*</label>
+        <input type="password" id="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required />
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="remember" [(ngModel)]="rememberMe" name="rememberMe" />
+        <label for="remember">Recuérdame</label>
+      </div>
+
+      <a routerLink="/forgot-password" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+      <button type="submit" class="login-btn">Inicia sesión</button>
+    </form>
+
+    <div class="register-link">
+      <a [routerLink]="['/registro']">NUEVO CLIENTE</a>
+    </div>
+  </div>
+</div>
